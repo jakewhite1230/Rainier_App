@@ -11,5 +11,6 @@ class HomeController < ApplicationController
   		@tenant = Tenant.set_current_tenant
   		params[:tenant_id] = @tenant.id
   	end
+    render :layout => "landing"
   end
 end

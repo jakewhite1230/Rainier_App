@@ -1,3 +1,4 @@
+<% @title = "Sign Up"%>
 <%= foundation_devise_error_messages! %>
 <div class="large-3 large-centered columns">
   <div class="login-box">
@@ -7,6 +8,14 @@
       <div class="row">
       <h5 class="text-center"><%= t('.sign_up', :default => "Sign up") %></h5>
       </div>
+       <%= fields_for(:tenant) do |w| %>
+        <div class="row">
+          <%= w.text_field :name, class: "large-12 columns", placeholder: "Name"%>
+        </div>
+        <div class="row">
+          <%= w.select :plan, options_for_select(Plan.options, params[:plan]), class: "large-12 columns", placeholder: "Name"%>
+        </div>
+      <% end %>
       <div class="row">
         <%= f.email_field :email, autofocus: true, class: "large-12 columns", placeholder: "Email"%>
       </div>
@@ -16,6 +25,7 @@
       <div class="row">
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "large-12 columns", placeholder: "Password Confirmation"%>
       </div>
+
       <div class="row">
         <%= f.submit t('.sign_up', :default => "Sign up"), class: "button expand large-12 large-centered columns" %>
       </div>

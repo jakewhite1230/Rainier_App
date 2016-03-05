@@ -20,7 +20,6 @@ class MembersController < ApplicationController
       @member = Member.new( member_params ) # only used if need to revisit form
       render :new
     end
-
   end
 
 
