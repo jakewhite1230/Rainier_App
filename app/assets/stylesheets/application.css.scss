@@ -20,16 +20,17 @@
  $red: #f05555;
  $light-grey: #CACACA;
  $black: #2f2f2f;
- $blue: #006FFF;
+ $blue: #333645;
  $purple: #AB00FF;
+ $bright-blue: #7596FF;
 
  .blue-button{
  	background-color: $blue;
+ 	&:hover{
+ 		background-color: $bright-blue;
+ 	}
  }
 
- .blue-button:hover{
- 	background-color: $purple;
- }
 
  .form-title{
  	font-size: 1.4em;
