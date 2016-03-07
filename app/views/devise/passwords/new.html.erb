@@ -1,21 +1,31 @@
 <%= foundation_devise_error_messages! %>
-<div class="large-3 large-centered columns">
+<div class="large-5 large-centered columns form-section">
   <div class="login-box">
   <div class="row">
   <div class="large-12 columns">
     <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post}) do |f| %>
+     <div class="row form-header">
+          <div class="login-icon"></div>
+          <h5 class="form-title">Enter your email address and we'll help you out.</h5>
+        </div>
       <div class="row">
-      <h5 class="text-center"><%= t('.forgot_your_password', :default => 'Forgot your password?') %></h5>
+          <span class="input input--yoshiko">
+              <%= f.email_field :email, class: "large-12 columns input__field input__field--yoshiko"%>
+            <label class="input__label input__label--yoshiko" for="email">
+              <%= f.label :email, class: "input__label-content input__label-content--yoshiko"%>
+            </label>
+          </span>
       </div>
       <div class="row">
-        <%= f.email_field :email, autofocus: true, class: "large-12 columns", placeholder: "Email"%>
-      </div>
-      <div class="row">
-        <%= f.submit t('.send_me_reset_password_instructions', :default => "Send me reset password instructions"), class: "button expand large-12 large-centered columns" %>
+        <%= f.submit t('.request_reset_link', :default => "Request Reset Link"), class: "button expand large-12 large-centered columns blue-button" %>
       </div>
     <% end %>
   </div>
-  <%= render "devise/shared/links" %>
 </div>
 </div>
+ <div class="row bottom-links">
+  <%- if controller_name != 'sessions' %>
+    <p class="form-service"><%= link_to t(".sign_in", :default => "Return to Login."), new_session_path(resource_name) %></p>
+  <% end -%>
+  </div>
 </div>

@@ -1,0 +1,431 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require foundation
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+ $red: #f05555;
+ $light-grey: #CACACA;
+ $black: #2f2f2f;
+ $blue: #006FFF;
+ $purple: #AB00FF;
+
+ .blue-button{
+ 	background-color: $blue;
+ }
+
+ .blue-button:hover{
+ 	background-color: $purple;
+ }
+
+ .form-title{
+ 	font-size: 1.4em;
+ 	font-weight: 500;
+ 	text-align: center;
+ 	margin: 0px;
+ }
+
+ .form-subtitle{
+ 	color: $light-grey;
+ 	text-align: center;
+ 	margin: 0px;
+ }
+ .form-service{
+ 	color: $light-grey;
+ 	text-align: center;
+ 	margin: 0px;
+ 	font-size: 0.7em;
+ }
+
+html{
+	height: 100%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	height: 100%;
+}
+
+.dashboard-body{
+	background-color: #EBEBEB;
+}
+
+.landing-body{
+	background-color: #2f2f2f;
+	color: #fff;
+}
+
+#side-bar{
+	background-color: #333645;
+	min-height: 100%;
+	width: 250px;
+	position: fixed;
+}
+
+#profile-corner{
+	width: 100%;
+	height: 150px;
+	background-color: #7596FF;
+	color: #fff;
+	padding: 15px;
+}
+#profile-message{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	font-weight: 700;
+}
+#profile-corner #profile-image{
+	width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    border: 3px solid #fff;
+    float: left;
+    margin: 0px 10px 0px 0px;
+}
+
+#profile-corner h3{
+	font-size: 1rem;
+	margin-bottom: 0px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+#profile-corner h2{
+	font-size: 2rem;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}
+
+#side-navigation{
+	padding-top: 15px;
+}
+
+#side-navigation ul{
+	margin-left: 0px;
+}
+
+#side-navigation li{
+	list-style: none;
+	font-weight: 700;
+	padding: 20px 20px;
+}
+
+#side-navigation .fa{
+	font-size: 1.5em;
+    margin-right: 12px;
+    width: 25px;
+    text-align: center;
+}
+
+.message-count{
+	color: #fff;
+	background-color: #f05555;
+	border-radius: 24px;
+    margin-left: 5px;
+    padding: 3px 8px;
+}
+
+#settings-nav{
+	position: absolute;
+	bottom: 0px;
+}
+#settings-nav li{
+	float: left;
+	padding: 5px 5px;
+}
+
+#settings-nav li:nth-child(1){
+	margin-left: 20px;
+}
+
+#settings-nav .fa{
+	margin-right: 0px;
+}
+#side-navigation .active{
+	background-color: rgba(0,0,0,0.3);
+}
+#side-navigation li:hover{
+	background-color: rgba(0,0,0,0.3);
+}
+
+#side-navigation li a{
+	color: #EBEBEB;
+}
+
+.dashboard{
+	width: 100%;
+	padding-left: 250px;
+}
+
+.dashboard .header-bar{
+	background-color: #fff;
+	width: 100%;
+	height: 150px;
+	outline: 2px solid #D9D9D9;
+	padding: 0px 15px;
+}
+
+.header-title{
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+.dashboard-container{
+	max-width: 1430px;
+	position: relative;
+	padding: 0px 15px;
+	top: 20px;
+}
+
+.floating-module{
+	background-color: #fff;
+	width: 48%;
+	padding: 15px;
+	border-radius: 5px;
+	box-shadow: 2px  #D9D9D9;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	float: left;
+	margin-right: 20px;
+}
+
+.floating-title{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+.floating-module hr{
+	margin-top: 0px;
+}
+
+.floating-module tbody{
+	border:none;
+}
+
+.floating-module a{
+	color: #333645;
+}
+
+/* Devise Layout */
+	.devise-body{
+		background-image: url('user-bkg.jpg');
+		background-size: cover;
+	}
+
+	.login-container{
+		height: 100%;
+	}
+
+	.form-section{
+		position: relative;
+	    top: 50%;
+	    -webkit-transform: translateY(-50%);
+	    transform: translateY(-50%);
+	}
+	.login-box{
+		background-color: #fff;
+	    padding: 25px 66px;
+	    border-radius: 3px;
+	    margin-bottom: 20px;
+	}
+
+	.bottom-links{
+	position:relative;
+	bottom: 0px;
+	padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    	a{
+    		color: $light-grey;
+    		&:hover{
+    			color: #fff;
+    		}
+    	}
+	}
+
+	.form-header{
+		margin-bottom: 25px;
+	}
+
+	.login-icon{
+	    margin: 0 auto 10px;
+	    height: 102px;
+	    width: 102px;
+	    background-image: url('rainier-icon.svg');
+	}
+
+	.input {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	margin: 1em 0em;
+	width: 100%;
+	vertical-align: top;
+}
+
+.input__field {
+	position: relative;
+	display: block;
+	float: right;
+	width: 60%;
+	border: none;
+	border-radius: 0;
+	background: #f0f0f0;
+	color:$black;
+	font-weight: 400;
+	font-size: 18px;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+	outline: none;
+}
+
+.input__label {
+	display: inline-block;
+	float: right;
+	padding: 0 1em;
+	width: 40%;
+	color: $light-grey;
+	font-weight: bold;
+	font-size: 70.25%;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.input__label-content {
+	position: relative;
+	padding: 1.6em 0;
+	width: 100%;
+}
+
+.input__field--yoshiko {
+	width: 100%;
+	background-color: #ffffff;
+	border: 2px solid transparent;
+	-webkit-transition: background-color 0.25s, border-color 0.25s;
+	transition: background-color 0.25s, border-color 0.25s;
+}
+
+.input__label--yoshiko {
+	width: 100%;
+	text-align: left;
+	position: absolute;
+	bottom: 100%;
+	pointer-events: none;
+	overflow: hidden;
+	padding: 0 1.25em;
+	-webkit-transform: translate3d(0, 3em, 0);
+	transform: translate3d(0, 3em, 0);
+	-webkit-transition: -webkit-transform 0.25s;
+	transition: transform 0.25s ;
+	-webkit-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+}
+
+.input__label-content--yoshiko {
+	color: $light-grey;
+	padding: 0.25em 0;
+	-webkit-transition: -webkit-transform 0.25s;
+	transition: transform 0.25s;
+	-webkit-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+}
+
+.input__label-content--yoshiko::after {
+	content: attr(data-content);
+	position: absolute;
+	font-weight: 800;
+	bottom: 100%;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: #a3d39c;
+	padding: 0.25em 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 0.85em;
+}
+
+.input__field--yoshiko:focus + .input__label--yoshiko,
+.input--filled .input__label--yoshiko {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.input__field--yoshiko:focus + .input__label--yoshiko .input__label-content--yoshiko,
+.input--filled .input__label-content--yoshiko {
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
+}
+
+.input__field--yoshiko:focus + .input__field--yoshiko,
+.input--filled .input__field--yoshiko {
+	background-color: transparent;
+	border-bottom: 2px solid $blue !important;
+	transition: all 2s ease-in;
+}
+
+.input__label--yoshiko{
+	padding:0px;
+}
+.input__label{
+	padding:0px;
+}
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+    box-shadow: none; 
+    border:none;
+    transition: none;
+    border-bottom: 2px solid $light-grey;
+}
+
+[type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus, textarea:focus {
+    border:none;
+    background-color: #fff;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid $blue;
+    transition: none;
+}
+
+.login-box label{
+	display: inline;
+}
+
+input,
+input:focus,
+input:active{
+	box-shadow:none !important;
+	outline:none
+}
+
+.input--filled .input__label-content--yoshiko{
+	color: $blue;
+}
+
+
+/* Devise Layout */
