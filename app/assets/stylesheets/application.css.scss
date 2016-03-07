@@ -226,7 +226,7 @@ body{
 
 /* Devise Layout */
 	.devise-body{
-		background-image: url('images/user-bkg.jpg');
+		background-image: image-url('images/user-bkg.jpg');
 		background-size: cover;
 	}
 
@@ -268,7 +268,7 @@ body{
 	    margin: 0 auto 10px;
 	    height: 102px;
 	    width: 102px;
-	    background-image: url('images/rainier-icon.svg');
+	    background-image: image-url('images/rainier-icon.svg');
 	}
 
 	.input {
