@@ -1,0 +1,36 @@
+<%= foundation_devise_error_messages! %>
+<div class="large-5 large-centered columns form-section">
+  <div class="login-box">
+  <div class="row">
+  <div class="large-12 columns">
+    <%= form_for(resource, :as => resource_name, :url => update_user_confirmation_path, :html => { :method => :put}) do |f| %>
+       <div class="row form-header">
+          <div class="login-icon"></div>
+          <h5 class="form-title">Create Your Password</h5>
+        </div>
+
+        <%= hidden_field_tag :confirmation_token, @confirmation_token %>
+       <div class="row">
+            <span class="input input--yoshiko">
+            <%= f.password_field :password, autocomplete: "off", class: "large-12 columns input__field input__field--yoshiko"%>
+             <label class="input__label input__label--yoshiko" for="password">
+                  <%= f.label :password, class: "input__label-content input__label-content--yoshiko"%>
+             </label>
+            </span>
+          </div>
+          <div class="row">
+            <span class="input input--yoshiko">
+               <%= f.password_field :password_confirmation, autocomplete: "off", class: "large-12 columns input__field input__field--yoshiko"%>
+                <label class="input__label input__label--yoshiko" for="password">
+                  <%= f.label :password_confirmation, class: "input__label-content input__label-content--yoshiko"%>
+                </label>
+             </span>
+          </div>
+      <div class="row">
+        <%= f.submit 'Create Password', class: "blue-button button expand large-12 large-centered columns"%>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+</div>
