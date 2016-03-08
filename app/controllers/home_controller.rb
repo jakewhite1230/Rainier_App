@@ -5,10 +5,11 @@ class HomeController < ApplicationController
   	if current_user
   		if session[:tenant_id]
   			Tenant.set_current_tenant session[:tenant_id]
+        render :layout => "application"
   		else
   			Tenant.set_current_tenant current_user.tenants.first
   		end
-  		@tenant = Tenant.set_current_tenant
+  		@tenant = Tenant.current_tenant
   		params[:tenant_id] = @tenant.id
   	end
     render :layout => "landing"
