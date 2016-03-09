@@ -2,11 +2,14 @@ Rails.application.routes.draw do
 
 
  
+  get 'users/dashboard'
+
   resources :members
   get 'home/index'
 
    root :to => "home#index"
 
+   get 'dashboard' => 'users#dashboard', as: "user_dashboard"
     
   # *MUST* come *BEFORE* devise's definitions (below)
   as :user do   

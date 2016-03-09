@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rails/activerecord-session_store.git
-  revision: 1f1999c549701f92007e6946cb476baf3ed3a4c2
+  revision: 2bd2e6c18ba2e0714e8a1b5d4e6f7b2a2c1819f3
   specs:
     activerecord-session_store (0.1.2)
       actionpack (>= 4.0, < 5.1)
@@ -51,7 +51,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
-    bcrypt (3.1.10)
+    bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -75,12 +75,13 @@ GEM
     devise-foundation-views (0.1.0)
     erubis (2.7.0)
     execjs (2.6.0)
-    foundation-rails (6.2.0.0)
+    foundation-rails (6.2.0.1)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
       sprockets-es6 (>= 0.9.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gravtastic (3.2.6)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -192,6 +193,7 @@ DEPENDENCIES
   devise
   devise-foundation-views
   foundation-rails
+  gravtastic
   jbuilder (~> 2.0)
   jquery-rails
   milia
