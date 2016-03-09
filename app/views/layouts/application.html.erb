@@ -18,7 +18,14 @@
       <div id= "profile-message">
         <img id="profile-image" src="<%= gravatar_url(current_user.email) %>" alt="Mike Jones">
         <h3>Welcome back,</h3>
-        <h2><%= @tenant.name %></h2>
+        <a data-toggle="user-dropdown" class="has-dropdown"><h2><%= @tenant.name %></h2></a>
+              <div class="dropdown-pane" id="user-dropdown" data-dropdown data-auto-focus="true">
+               <ul>
+                <a href=""><li>Upgrade Account</li></a>
+                <li><%= link_to('Logout', destroy_user_session_path, title: 'Logout', :method => :delete) %></li>
+               </ul>
+                
+              </div>
       </div>
     </div>
       <nav id="side-navigation">
