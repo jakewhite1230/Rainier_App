@@ -1,5 +1,4 @@
 <% @title = "Sign In"%>
-<%= foundation_devise_error_messages! %>
 <div class="large-5 large-centered columns form-section">
   <div class="login-box">
   <div class="column row">
@@ -9,6 +8,7 @@
           <div class="login-icon"></div>
           <h5 class="form-title">Login to Your Rainier Dashboard</h5>
         </div>
+        <%= render 'layouts/messages' %>
       <div class="row">
               <span class="input input--yoshiko">
                  <%= f.email_field :email, class: "large-12 columns input__field input__field--yoshiko"%>

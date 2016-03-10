@@ -8,13 +8,13 @@ Bundler.require(*Rails.groups)
 module Rainier
   class Application < Rails::Application
      
-    # uncomment to ensure a common layout for devise forms
-    #   config.to_prepare do   # Devise
-    #     Devise::SessionsController.layout "sign"
-    #     Devise::RegistrationsController.layout "sign"
-    #     Devise::ConfirmationsController.layout "sign"
-    #     Devise::PasswordsController.layout "sign"
-    #   end   # Devise
+  config.to_prepare do
+  Devise::SessionsController.layout "sign"
+  Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "sign" }
+  Devise::ConfirmationsController.layout "sign"
+  Devise::UnlocksController.layout "sign"            
+  Devise::PasswordsController.layout "sign"        
+end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

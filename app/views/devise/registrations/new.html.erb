@@ -1,5 +1,4 @@
 <% @title = "Sign Up"%>
-<%= foundation_devise_error_messages! %>
 <div class="large-5 large-centered columns form-section">
   <div class="login-box">
     <div class="row">
@@ -10,6 +9,7 @@
           <h5 class="form-title">Get Started for Free</h5>
           <p class="form-subtitle">No Credit Card Needed</p>
         </div>
+         <%= render 'layouts/messages' %>
         <%= fields_for(:tenant) do |w| %>
           <div class="row">
             <span class="input input--yoshiko">

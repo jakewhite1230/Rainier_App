@@ -31,6 +31,30 @@
  	}
  }
 
+.callout.alert {
+    background-color: #f05555;
+    width: 100%;
+}
+
+.callout.success{
+	background-color: #5fcf80;
+	width:100%;
+}
+
+.callout {
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+   	border: none;
+    border-radius: 0;
+    position: relative;
+    color: #fff;
+    .close-button{
+    	color: #fff;
+    	&:focus{
+    		outline: none;
+    	}
+    }
+}
 
  .form-title{
  	font-size: 1.4em;
