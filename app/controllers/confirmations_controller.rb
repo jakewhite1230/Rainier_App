@@ -1,6 +1,5 @@
 class ConfirmationsController < Milia::ConfirmationsController
- 
-	 def update
+ def update
 	    if @confirmable.attempt_set_password(user_params)
 
 	      # this section is patterned off of devise 3.2.5 confirmations_controller#show

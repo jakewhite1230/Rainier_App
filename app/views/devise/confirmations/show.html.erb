@@ -1,8 +1,9 @@
-<%= foundation_devise_error_messages! %>
+
 <div class="large-5 large-centered columns form-section">
   <div class="login-box">
   <div class="row">
   <div class="large-12 columns">
+  <%= render 'layouts/messages' %>
     <%= form_for(resource, :as => resource_name, :url => update_user_confirmation_path, :html => { :method => :put}) do |f| %>
        <div class="row form-header">
           <div class="login-icon"></div>
