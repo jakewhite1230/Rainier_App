@@ -6,6 +6,7 @@ $red: #f05555;
  $bright-blue : #7596FF;
  $white : #fff;
  $green : #5fcf80;
+ $off-white: #EBEBEB;
 /*Date picker*/
 
 
@@ -22,7 +23,7 @@ $red: #f05555;
 .ui-widget-header {
     border: none !important;
     color: $white !important;
-    background: $bright-blue !important;
+    background: $blue !important;
 }
 
 .ui-corner-all{
@@ -36,14 +37,21 @@ $red: #f05555;
   background: none !important;
   border: none!important;
   text-align: center !important;
+  height: 25px;
+  width: 25px;
+  font-size: 13px;
 }
 
 #ui-datepicker-div tbody tr:nth-child(even) {
     background-color: transparent !important;
 }
 
+.ui-datepicker th {
+    font-size: 13px;
+}
+
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
-    background: $light-grey !important;
+    background: $red !important;
     color: $white !important;
     border-radius: 50%;
 }
@@ -51,4 +59,51 @@ $red: #f05555;
 .ui-state-active{
 	background: $green !important;
 	color: $white !important;
+  border-radius: 50%;
 }
+
+.ui-widget-header .ui-icon {
+    background-image:image-url('ui-icons-jquery.png') !important;
+}
+
+.ui-icon-circle-triangle-w {
+    background-position: -95px -14px !important;
+}
+
+.ui-icon-circle-triangle-e {
+    background-position: -31px -14px !important;
+}
+
+a.ui-state-hover.ui-datepicker-prev-hover,
+a.ui-state-hover.ui-datepicker-next-hover{
+  background:transparent !important;
+  border:none !important;
+  padding: 0px !important;
+}
+
+a.ui-state-hover.ui-datepicker-next-hover{
+  right: 2px !important;
+}
+a.ui-state-hover.ui-datepicker-prev-hover{
+  left: 2px !important;
+}
+
+.ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover {
+   top: 2px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
