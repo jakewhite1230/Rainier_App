@@ -30,7 +30,7 @@
     </div>
       <nav id="side-navigation">
         <ul>
-          <li class="active"><a href="#"><i class="fa fa-home"></i>Dashboard</a></li>
+          <li><%= link_to "<i class='fa fa-home'></i> Dashboard".html_safe,user_dashboard_path %></li>
           <li><a href="#"><i class="fa fa-folder"></i>Projects</a></li>
           <li><%= link_to "<i class='fa fa-users'></i> Clients".html_safe,new_member_path %></li>
           <li><a href="#"><i class="fa fa-usd"></i>Invoices</a></li>

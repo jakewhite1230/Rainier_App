@@ -9,7 +9,11 @@ $red: #f05555;
  $off-white: #EBEBEB;
 /*Date picker*/
 
-
+.projects{
+    background-color: #fff;
+    padding: 20px 0px;
+    border-radius: 5px;
+}
 #ui-datepicker-div{
 	border-radius: 0px;
 }
@@ -92,6 +96,9 @@ a.ui-state-hover.ui-datepicker-prev-hover{
    top: 2px !important;
 }
 
+.projects label{
+  display: inline;
+}
 
 
 

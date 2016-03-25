@@ -11,23 +11,77 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="row">
+    <span class="input input--yoshiko">
+      <%= f.text_field :title, class: "large-12 columns input__field input__field--yoshiko" %>
+      <label class="input__label input__label--yoshiko" for="email">
+       <%= f.label :title, class: "input__label-content input__label-content--yoshiko"%>
+      </label>
+      </span>
   </div>
-  <div class="field">
-    <%= f.label :details %><br>
-    <%= f.text_field :details %>
+  <div class="row">
+    <span class="input input--yoshiko">
+      <%= f.text_field :details, class: "large-12 columns input__field input__field--yoshiko" %>
+      <label class="input__label input__label--yoshiko" for="email">
+       <%= f.label :details, class: "input__label-content input__label-content--yoshiko"%>
+      </label>
+      </span>
   </div>
-  <div class="field">
-    <%= f.label :expected_completion_date %><br>
-    <%= f.text_field :expected_completion_date, id: 'datepicker' %>
+  <div class="row">
+    <span class="input input--yoshiko">
+      <%= f.text_field :expected_completion_date, id: "datepicker", class: "large-12 columns input__field input__field--yoshiko" %>
+      <label class="input__label input__label--yoshiko" for="email">
+       <%= f.label :expected_completion_date, class: "input__label-content input__label-content--yoshiko"%>
+      </label>
+      </span>
   </div>
-  <div class="field">
-    <%= f.label :tenant_id %><br>
-    <%= f.text_field :tenant_id %>
+  <div class="row">
+    <span class="input input--yoshiko">
+      <%= f.text_field :tenant_id, class: "large-12 columns input__field input__field--yoshiko" %>
+      <label class="input__label input__label--yoshiko" for="email">
+       <%= f.label :tenant_id, class: "input__label-content input__label-content--yoshiko"%>
+      </label>
+      </span>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <%= f.submit t('.create_project', :default => "Create Project"), class: "button expand large-3 large-centered columns blue-button"%>
   </div>
 <% end %>
+
+<script>
+  
+      (function() {
+        // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+        if (!String.prototype.trim) {
+          (function() {
+            // Make sure we trim BOM and NBSP
+            var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+            String.prototype.trim = function() {
+              return this.replace(rtrim, '');
+            };
+          })();
+        }
+
+        [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+          // in case the input is already filled..
+          if( inputEl.value.trim() !== '' ) {
+            classie.add( inputEl.parentNode, 'input--filled' );
+          }
+
+          // events:
+          inputEl.addEventListener( 'focus', onInputFocus );
+          inputEl.addEventListener( 'blur', onInputBlur );
+        } );
+
+        function onInputFocus( ev ) {
+          classie.add( ev.target.parentNode, 'input--filled' );
+        }
+
+        function onInputBlur( ev ) {
+          if( ev.target.value.trim() === '' ) {
+            classie.remove( ev.target.parentNode, 'input--filled' );
+          }
+        }
+      })();
+    
+</script>
