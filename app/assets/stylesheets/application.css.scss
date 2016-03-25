@@ -13,6 +13,7 @@
  *= require foundation
  *= require_tree .
  *= require_self
+ *= require jquery-ui/datepicker
  *= require foundation_and_overrides
 
  */
@@ -23,6 +24,7 @@
  $blue: #333645;
  $purple: #AB00FF;
  $bright-blue: #7596FF;
+ $green: #5fcf80;
 
  .blue-button{
  	background-color: $blue;
@@ -37,7 +39,7 @@
 }
 
 .callout.success{
-	background-color: #5fcf80;
+	background-color: $green;
 	width:100%;
 }
 

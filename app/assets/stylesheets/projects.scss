@@ -1,3 +1,54 @@
-// Place all the styles related to the Projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$red: #f05555;
+ $light-grey : #939090;
+ $black : #2f2f2f;
+ $blue : #333645;
+ $purple : #AB00FF;
+ $bright-blue : #7596FF;
+ $white : #fff;
+ $green : #5fcf80;
+/*Date picker*/
+
+
+#ui-datepicker-div{
+	border-radius: 0px;
+}
+
+.ui-widget-content {
+    border: none !important;
+    background: #ffffff !important;
+    color: #222222 !important;
+}
+
+.ui-widget-header {
+    border: none !important;
+    color: $white !important;
+    background: $bright-blue !important;
+}
+
+.ui-corner-all{
+	border-bottom-right-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	border-top-left-radius: 0px !important;
+}
+
+.ui-state-default {
+  background: none !important;
+  border: none!important;
+  text-align: center !important;
+}
+
+#ui-datepicker-div tbody tr:nth-child(even) {
+    background-color: transparent !important;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background: $light-grey !important;
+    color: $white !important;
+    border-radius: 50%;
+}
+
+.ui-state-active{
+	background: $green !important;
+	color: $white !important;
+}

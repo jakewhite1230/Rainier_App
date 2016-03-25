@@ -13,10 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery-ui/datepicker
 //= require_tree .
 
 
 $(function(){ 
 	$(document).foundation(); 
+	$(function() {
+	  $('#datepicker').datepicker({
+	  	dayNamesMin: [ "S", "M", "T", "W", "T", "F", "S" ]
+	  });
+	});
 });
 
