@@ -1,4 +1,11 @@
-<% @title = "Projects"%>
+<% @title = @project.title%>
+
+
+
+
+
+
+
 
 <p>
   <strong>Title:</strong>
@@ -11,14 +18,18 @@
 </p>
 
 <p>
+  <strong>Invoice Number:</strong>
+  <%= @project.invoice_number %>
+</p>
+
+<p>
   <strong>Expected completion date:</strong>
   <%= @project.expected_completion_date %>
 </p>
 
 <p>
   <strong>Tenant:</strong>
-  <%= @project.tenant_id %>
+  <%= tenant_name @project.tenant_id %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Edit', edit_tenant_project_path(@project, tenant_id: @tenant.id) %>|

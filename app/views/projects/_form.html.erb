@@ -21,6 +21,14 @@
   </div>
   <div class="row">
     <span class="input input--yoshiko">
+      <%= f.text_field :invoice_number, class: "large-12 columns input__field input__field--yoshiko" %>
+      <label class="input__label input__label--yoshiko" for="invoice_number">
+       <%= f.label :invoice_number, class: "input__label-content input__label-content--yoshiko"%>
+      </label>
+      </span>
+  </div>
+  <div class="row">
+    <span class="input input--yoshiko">
       <%= f.text_field :details, class: "large-12 columns input__field input__field--yoshiko" %>
       <label class="input__label input__label--yoshiko" for="email">
        <%= f.label :details, class: "input__label-content input__label-content--yoshiko"%>
