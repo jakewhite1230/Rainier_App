@@ -18,7 +18,7 @@
       <div id= "profile-message">
         <img id="profile-image" src="<%= gravatar_url(current_user.email) %>" alt="<%= @tenant.name %>">
         <h3>Welcome back,</h3>
-        <a data-toggle="user-dropdown" class="has-dropdown"><h2 id="<%= @tenant.name %>">Jake<span></span></h2></a>
+        <a data-toggle="user-dropdown" class="has-dropdown"><h2 id="user-name"><%= @tenant.name %><span></span></h2></a>
               <div class="dropdown-pane" id="user-dropdown" data-dropdown data-auto-focus="true">
                <ul>
                 <li><%= link_to('Edit Account', edit_user_registration_path, title: 'Edit Account') %></li>
