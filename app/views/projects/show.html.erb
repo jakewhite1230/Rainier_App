@@ -17,8 +17,8 @@
 
 <p>
   <strong>Tenant:</strong>
-  <%= @project.tenant %>
+  <%= @project.tenant_id %>
 </p>
 
-<%= link_to 'Edit', edit_tenant_project_path(project: @project, tenant: @project.tenant_id) %> |
+<%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

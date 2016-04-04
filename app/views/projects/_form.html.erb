@@ -1,4 +1,4 @@
-<%= form_for(@project) do |f| %>
+<%= form_for [@tenant, @project] do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -32,14 +32,6 @@
       <%= f.text_field :expected_completion_date, id: "datepicker", class: "large-12 columns input__field input__field--yoshiko" %>
       <label class="input__label input__label--yoshiko" for="email">
        <%= f.label :expected_completion_date, class: "input__label-content input__label-content--yoshiko"%>
-      </label>
-      </span>
-  </div>
-  <div class="row">
-    <span class="input input--yoshiko">
-      <%= f.text_field :tenant_id, class: "large-12 columns input__field input__field--yoshiko" %>
-      <label class="input__label input__label--yoshiko" for="email">
-       <%= f.label :tenant_id, class: "input__label-content input__label-content--yoshiko"%>
       </label>
       </span>
   </div>
