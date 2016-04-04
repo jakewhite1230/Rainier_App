@@ -16,9 +16,9 @@
    <div id="side-bar">
     <div id="profile-corner">
       <div id= "profile-message">
-        <img id="profile-image" src="<%= gravatar_url(current_user.email) %>" alt="Jake">
+        <img id="profile-image" src="<%= gravatar_url(current_user.email) %>" alt="<%= @tenant.name %>">
         <h3>Welcome back,</h3>
-        <a data-toggle="user-dropdown" class="has-dropdown"><h2 id="user-name">Jake<span></span></h2></a>
+        <a data-toggle="user-dropdown" class="has-dropdown"><h2 id="<%= @tenant.name %>">Jake<span></span></h2></a>
               <div class="dropdown-pane" id="user-dropdown" data-dropdown data-auto-focus="true">
                <ul>
                 <li><%= link_to('Edit Account', edit_user_registration_path, title: 'Edit Account') %></li>
@@ -31,7 +31,7 @@
       <nav id="side-navigation">
         <ul>
           <li><%= link_to "<i class='fa fa-home'></i> Dashboard".html_safe,user_dashboard_path %></li>
-          <li><a href="#"><i class="fa fa-folder"></i>Projects</a></li>
+          <li><%= link_to "<i class='fa fa-folder'></i>Projects".html_safe, new_tenant_project_path(tenant_id: @tenant.id)%></li>
           <li><%= link_to "<i class='fa fa-users'></i> Clients".html_safe,new_member_path %></li>
           <li><a href="#"><i class="fa fa-usd"></i>Invoices</a></li>
           <li><a href="#"><i class="fa fa-inbox"></i>Messages<span class="message-count">9</span></a></li>

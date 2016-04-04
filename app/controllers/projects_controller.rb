@@ -5,26 +5,31 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    @tenant = Tenant.current_tenant
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @tenant = Tenant.current_tenant
   end
 
   # GET /projects/new
   def new
     @project = Project.new
+    @tenant = Tenant.current_tenant
   end
 
   # GET /projects/1/edit
   def edit
+    @tenant = Tenant.current_tenant
   end
 
   # POST /projects
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    @tenant = Tenant.current_tenant
 
     respond_to do |format|
       if @project.save

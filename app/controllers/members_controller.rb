@@ -2,14 +2,15 @@ class MembersController < ApplicationController
 
   # uncomment to ensure common layout for forms
   # layout  "sign", :only => [:new, :edit, :create]
-
+@tenant = Tenant.current_tenant
   def new()
     @member = Member.new()
     @user   = User.new()
+    @tenant = Tenant.current_tenant
   end
-
   def create()
     @user = User.new( user_params )
+    @tenant = Tenant.current_tenant
 
     # ok to create user, member
     if @user.save_and_invite_member() && @user.create_member( member_params )
