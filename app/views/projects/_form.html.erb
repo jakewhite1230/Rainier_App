@@ -43,6 +43,7 @@
       </label>
       </span>
   </div>
+  <%= f.hidden_field :tenant_id, value: params[:tenant_id]%>
   <div class="row">
     <%= f.submit t('.create_project', :default => "Create Project"), class: "button expand large-3 large-centered columns blue-button"%>
   </div>

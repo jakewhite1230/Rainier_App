@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<% @title = "Projects"%>
 
 <p>
   <strong>Title:</strong>
@@ -20,5 +20,5 @@
   <%= @project.tenant %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Edit', edit_tenant_project_path(project: @project, tenant: @project.tenant_id) %> |
 <%= link_to 'Back', projects_path %>
