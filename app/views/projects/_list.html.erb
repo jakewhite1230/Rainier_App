@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <% if @projects.size > 0 %>
 <table>
 
@@ -17,8 +15,7 @@
         <td><%= link_to project.title, tenant_project_path(project, tenant_id: @tenant.id) %></td>
         <td><%= project.expected_completion_date %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_tenant_project_path(project, tenant_id: @tenant.id) %></td>
-        <td><%= link_to '<i class="fa fa-trash"></i>'.html_safe, project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <%= project.tenant_id %>
+        <td><%= link_to '<i class="fa fa-trash"></i>'.html_safe, tenant_project_path(project, tenant_id: @tenant.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

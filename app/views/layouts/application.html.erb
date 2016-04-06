@@ -32,7 +32,7 @@
       <nav id="side-navigation">
         <ul>
           <li><%= link_to "<i class='fa fa-home'></i> Dashboard".html_safe,user_dashboard_path %></li>
-          <li><%= link_to "<i class='fa fa-folder'></i>Projects".html_safe, projects_path%></li>
+          <li><%= link_to "<i class='fa fa-folder'></i>Projects".html_safe, tenant_projects_path(tenant_id: @tenant.id)%></li>
           <li><%= link_to "<i class='fa fa-users'></i> Clients".html_safe,new_member_path %></li>
           <li><a href="#"><i class="fa fa-usd"></i>Invoices</a></li>
           <li><a href="#"><i class="fa fa-inbox"></i>Messages<span class="message-count">9</span></a></li>

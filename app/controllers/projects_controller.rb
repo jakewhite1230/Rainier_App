@@ -6,8 +6,8 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
     @tenant = Tenant.current_tenant
+    @projects = Project.by_user_plan_and_tenant(@tenant.id)
   end
 
   # GET /projects/1
@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to tenant_project_path, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to tenant_project_path, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
@@ -61,9 +61,10 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
+    @tenant = Tenant.current_tenant
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to tenant_projects_path, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -85,7 +86,7 @@ class ProjectsController < ApplicationController
 
     def verify_tenant
       unless params[:tenant_id] == Tenant.current_tenant_id.to_s
-        redirect_to :root, flash: {error: 'You are not authorized to access any organization other than your own'}
+        redirect_to user_dashboard_path, flash: {error: 'You are not authorized to access any organization other than your own'}
       end
     end
 
