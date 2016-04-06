@@ -1,35 +1,24 @@
-<% @title = @project.title%>
+<% @title = @project.invoice_number.to_s +  " | " + @project.title %>
+<div class="projects clearfix">
+<div class="columns medium-8">
+  <h2>Project Details <span class="project-edit"><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_tenant_project_path(@project, tenant_id: @tenant.id) %></span></h2>
+  <hr>
+  <h1 class="project-title"><%= @project.title %></h1>
+  <p class="project-details"><%= @project.details %></p>
+  <p class="project-number">Invoice Number: <%= @project.invoice_number %></p>
+</div>
+<div class="columns medium-4">
 
-
-
-
-
-
-
-
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
-
-<p>
-  <strong>Details:</strong>
-  <%= @project.details %>
-</p>
-
-<p>
-  <strong>Invoice Number:</strong>
-  <%= @project.invoice_number %>
-</p>
-
-<p>
-  <strong>Expected completion date:</strong>
-  <%= @project.expected_completion_date %>
-</p>
-
-<p>
-  <strong>Tenant:</strong>
-  <%= tenant_name @project.tenant_id %>
-</p>
-
-<%= link_to 'Edit', edit_tenant_project_path(@project, tenant_id: @tenant.id) %>|
+    <% @date = @project.expected_completion_date %>
+    <% @year = @date.strftime("%Y")
+      @month = @date.strftime("%B")
+      @day = @date.strftime("%e")
+     %>
+     <div class="calendar">
+         <div class="calendarHead">
+            <strong> <%= @month %> </strong>
+        </div>
+        <span><p><%= @day %></p></span>
+     </div>
+     <p class="project-completion-date">Expected Completion Date</p>
+</div>

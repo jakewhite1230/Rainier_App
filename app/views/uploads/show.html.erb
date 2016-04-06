@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @upload.name %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @upload.key %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @upload.project %>
+</p>
+
+<%= link_to 'Edit', edit_upload_path(@upload) %> |
+<%= link_to 'Back', uploads_path %>

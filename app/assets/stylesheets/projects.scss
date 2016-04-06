@@ -100,7 +100,57 @@ a.ui-state-hover.ui-datepicker-prev-hover{
   display: inline;
 }
 
+.project-details{
+  font-size: .8em;
+  color: $light-grey;
+  font-style: italic;
+  font-weight: bold;
+}
 
+.calendar{
+  width: 175px;
+  margin: auto;
+  display: block;
+  height: auto;
+  border: 1px solid $off-white;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.calendar span{
+  font-size: 5em;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.calendarHead{
+  background-color: $red;
+  color: $white;
+  text-align: center;
+  font-size: 1.5em;
+  border-radius: 5px 5px 0px 0px;
+
+}
+
+.project-completion-date{
+  text-align: center;
+  font-weight: 600;
+   color: $light-grey;
+}
+
+.project-edit a{
+  color: $light-grey;
+  font-size: .5em;
+  opacity: 0.8;
+}
+
+.project-edit a:hover,
+.project-edit a:focus,
+.project-edit a:active{
+  color: $blue;
+  opacity: 1;
+  outline: none;
+}
 
 
 

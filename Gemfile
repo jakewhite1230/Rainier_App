@@ -11,6 +11,9 @@ gem 'foundation-rails'
 gem 'devise-foundation-views'
 gem 'gravtastic'
 gem 'jquery-ui-rails'
+gem 'aws-sdk'
+gem 'stripe'
+gem 'figaro'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

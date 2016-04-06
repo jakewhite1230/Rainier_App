@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Projects</h1>
-
+<% if @projects.size > 0 %>
 <table>
+
   <thead>
     <tr>
       <th>Title</th>
-      <th>Details</th>
       <th>Expected completion date</th>
-      <th>Tenant</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,15 +15,17 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= link_to project.title, tenant_project_path(project, tenant_id: @tenant.id) %></td>
-        <td><%= project.tenant %></td>
         <td><%= project.expected_completion_date %></td>
-        <td><%= link_to 'Edit', edit_tenant_project_path(project, tenant_id: @tenant.id) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_tenant_project_path(project, tenant_id: @tenant.id) %></td>
+        <td><%= link_to '<i class="fa fa-trash"></i>'.html_safe, project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= project.tenant_id %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<% else %>
+  <p>You haven't created any projects yet.</p>
+  <% end %>
 <br>
 
 <%= link_to 'New Project', new_tenant_project_path(tenant_id: @tenant.id) %>

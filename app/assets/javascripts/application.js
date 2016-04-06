@@ -21,7 +21,8 @@ $(function(){
 	$(document).foundation(); 
 	$(function() {
 	  $('#datepicker').datepicker({
-	  	dayNamesMin: [ "S", "M", "T", "W", "T", "F", "S" ]
+	  	dayNamesMin: [ "S", "M", "T", "W", "T", "F", "S" ],
+	  	dateFormat: 'yy-mm-dd'
 	  });
 	});
 });
