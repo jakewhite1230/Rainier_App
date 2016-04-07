@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   belongs_to :tenant
- # has_many :artifacts, dependent: :destroy
+  has_many :artifacts, dependent: :destroy
   validate :free_plan_can_only_have_three_projects
 
   has_many :user_projects

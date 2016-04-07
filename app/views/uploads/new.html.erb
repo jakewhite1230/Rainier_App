@@ -1,5 +1,4 @@
-<h1>New Upload</h1>
-
+<% @title = "Upload Files to Project"%>
 <%= render 'form' %>
 
-<%= link_to 'Back', uploads_path %>
+<%= link_to 'Back', tenant_project_path(@upload.project_id, tenant_id: @tenant.id) %>

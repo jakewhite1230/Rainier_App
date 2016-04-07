@@ -6,6 +6,8 @@
   <h1 class="project-title"><%= @project.title %></h1>
   <p class="project-details"><%= @project.details %></p>
   <p class="project-number">Invoice Number: <%= @project.invoice_number %></p>
+  <%= render 'uploads/list', uploads: @project.uploads %>
+  <%= link_to 'New Upload', new_upload_path(project_id: @project.id) %>
 </div>
 <div class="columns medium-4">
 

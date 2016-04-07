@@ -5,6 +5,7 @@ class UploadsController < ApplicationController
   # GET /uploads.json
   def index
     @uploads = Upload.all
+    @tenant = Tenant.current_tenant
   end
 
   # GET /uploads/1
@@ -15,6 +16,8 @@ class UploadsController < ApplicationController
   # GET /uploads/new
   def new
     @upload = Upload.new
+    @tenant = Tenant.current_tenant
+    @upload.project_id = params[:project_id]
   end
 
   # GET /uploads/1/edit
@@ -28,7 +31,7 @@ class UploadsController < ApplicationController
 
     respond_to do |format|
       if @upload.save
-        format.html { redirect_to @upload, notice: 'Upload was successfully created.' }
+        format.html { redirect_to tenant_project_url(tenant_id: Tenant.current_tenant_id, id: @upload.project_id), notice: 'Upload was successfully created.' }
         format.json { render :show, status: :created, location: @upload }
       else
         format.html { render :new }
@@ -56,7 +59,7 @@ class UploadsController < ApplicationController
   def destroy
     @upload.destroy
     respond_to do |format|
-      format.html { redirect_to uploads_url, notice: 'Upload was successfully destroyed.' }
+      format.html { redirect_to tenant_project_url(tenant_id: Tenant.current_tenant_id, id: @upload.project_id), notice: 'Upload was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +72,6 @@ class UploadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def upload_params
-      params.require(:upload).permit(:name, :key, :project_id)
+      params.require(:upload).permit(:name, :upload, :project_id)
     end
 end

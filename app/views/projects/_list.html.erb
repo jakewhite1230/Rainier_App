@@ -23,6 +23,7 @@
 <% else %>
   <p>You haven't created any projects yet.</p>
   <% end %>
-<br>
 
-<%= link_to 'New Project', new_tenant_project_path(tenant_id: @tenant.id) %>
+<% if (@tenant.can_create_projects?) %>
+  <%= link_to 'New Project', new_tenant_project_path(tenant_id: @tenant.id) %>
+<% end %>
