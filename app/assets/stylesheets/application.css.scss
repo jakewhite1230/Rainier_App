@@ -15,7 +15,7 @@
  *= require_self
  *= require jquery-ui/datepicker
  *= require foundation_and_overrides
-
+ 
  */
 
  $red: #f05555;
@@ -295,6 +295,10 @@ input:active{
 
 .input--filled .input__label-content--yoshiko{
 	color: $blue;
+}
+
+.reveal-overlay{
+	background-color: transparentize($blue,.05);
 }
 
 

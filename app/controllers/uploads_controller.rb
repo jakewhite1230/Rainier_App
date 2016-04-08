@@ -11,6 +11,7 @@ class UploadsController < ApplicationController
   # GET /uploads/1
   # GET /uploads/1.json
   def show
+     @tenant = Tenant.current_tenant
   end
 
   # GET /uploads/new
