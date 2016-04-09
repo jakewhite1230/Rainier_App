@@ -1,5 +1,6 @@
 class ConfirmationsController < Milia::ConfirmationsController
  def update
+ 	@tenant = Tenant.current_tenant
 	    if @confirmable.attempt_set_password(user_params)
 
 	      # this section is patterned off of devise 3.2.5 confirmations_controller#show

@@ -22,7 +22,6 @@
         <a data-toggle="user-dropdown" class="has-dropdown"><h2 id="user-name"><%= @tenant.name %><span></span></h2></a>
               <div class="dropdown-pane" id="user-dropdown" data-dropdown data-auto-focus="true">
                <ul>
-               <li><a data-open="changePlan">Change Plan</a></li>
                 <li><%= link_to('Edit Account', edit_user_registration_path, title: 'Edit Account') %></li>
                 <li><%= link_to('Logout', destroy_user_session_path, title: 'Logout', :method => :delete) %></li>
                </ul>
@@ -54,14 +53,6 @@
 
     <%= yield %>
   </div>
-  </div>
-  <div class="reveal" id="changePlan" data-reveal data-animation-in="slide-in-down" data-animation-out="slide-out-up">
-    <h1>Awesome. I Have It.</h1>
-    <p class="lead">Your couch. It is mine.</p>
-    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-    <button class="close-button" data-close aria-label="Close modal" type="button">
-      <span aria-hidden="true">&times;</span>
-    </button>
   </div>
   </body>
 </html>

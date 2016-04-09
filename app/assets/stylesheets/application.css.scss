@@ -25,6 +25,7 @@
  $purple: #AB00FF;
  $bright-blue: #7596FF;
  $green: #5fcf80;
+ $dark-grey: #D9D9D8;
 
  .blue-button{
  	background-color: $blue;
@@ -300,6 +301,93 @@ input:active{
 .reveal-overlay{
 	background-color: transparentize($blue,.05);
 }
+
+.plan-statement{
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+
+.plan{
+	background: #fff;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.06);
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid $dark-grey;
+    margin-right: 25px;
+    position: relative;
+    padding: 30px;
+}
+.plan-title{
+	font-weight: bold;
+	color: $bright-blue;
+}
+
+.plan-cost{
+	color: $bright-blue;
+}
+
+.per-month{
+	opacity: 0.5;
+}
+
+.plan-selected{
+	border-color: $green;
+    box-shadow: none;
+    border: 3px $green solid;
+    .plan-title,.plan-cost{
+    	color: $green;
+    }
+    :disabled{
+    	color: $black;
+    	background-color: transparent;
+    	opacity: 0.5;
+    	border: 1px solid $light-grey;
+    }
+
+}
+
+.plan-marker {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    overflow: hidden;
+    .fa{
+   	z-index: 1;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    top: 5px;
+    left: 15px;
+    }
+}
+
+.plan-marker:after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-top: 50px solid $green;
+    border-left: 50px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.plan-description{
+	color: $light-grey;
+
+}
+
+ .bright-blue-button{
+ 	background-color: $bright-blue;
+ 	&:hover{
+ 		background-color: darken($bright-blue, 25%);
+ 	}
+ }
 
 
 /* Devise Layout */
