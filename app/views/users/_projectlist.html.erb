@@ -1,0 +1,23 @@
+<% if @projects.size > 0 %>
+<table>
+
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Due Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to project.title, tenant_project_path(project, tenant_id: @tenant.id) %></td>
+        <td><%= project.expected_completion_date.strftime("%B %e, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+  <p>You haven't created any projects yet.</p>
+  <% end %>

@@ -164,19 +164,17 @@ margin-left:3px;
 
 .floating-module{
 	background-color: #fff;
-	width: 48%;
 	padding: 15px;
 	border-radius: 5px;
 	box-shadow: 2px  #D9D9D9;
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
-	float: left;
-	margin-right: 20px;
+	font-weight: 700;
+	margin-bottom: 25px
 }
 
 .floating-title{
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
+	font-weight: 700;
 }
 
 .floating-module hr{
@@ -191,3 +189,6 @@ margin-left:3px;
 	color: #333645;
 }
 
+.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+	float: left;
+}
