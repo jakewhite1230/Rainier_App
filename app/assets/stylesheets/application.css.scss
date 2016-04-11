@@ -310,14 +310,27 @@ input:active{
 
 .plan{
 	background: #fff;
-    box-shadow: 0 2px 0 rgba(0,0,0,0.06);
     border-radius: 4px;
     box-sizing: border-box;
     text-align: center;
     border: 1px solid $dark-grey;
-    margin-right: 25px;
     position: relative;
     padding: 30px;
+    height: 345px;
+    .button{
+    	position:absolute;
+    	bottom: 30px;
+    	left: 30px;
+    	right: 30px;
+    	margin: 0;
+    	a{
+    		color: #fff;
+    	}
+    }
+}
+
+.plan:after{
+	background-color: $red;
 }
 .plan-title{
 	font-weight: bold;
@@ -339,13 +352,24 @@ input:active{
     .plan-title,.plan-cost{
     	color: $green;
     }
-    :disabled{
-    	color: $black;
-    	background-color: transparent;
-    	opacity: 0.5;
-    	border: 1px solid $light-grey;
-    }
 
+}
+
+.plan.team{
+	.plan-title{
+		font-weight: bold;
+		color: $purple;
+	}
+
+	.plan-cost{
+		color: $purple;
+	}
+	.button{
+	background-color: $purple;
+ 	&:hover{
+ 		background-color: darken($purple, 10%);
+ 	}
+ }
 }
 
 .plan-marker {
@@ -385,9 +409,61 @@ input:active{
  .bright-blue-button{
  	background-color: $bright-blue;
  	&:hover{
- 		background-color: darken($bright-blue, 25%);
+ 		background-color: darken($bright-blue, 10%);
  	}
  }
+.disabled{
+    	color: $black !important;
+    	background-color: transparent !important;
+    	opacity: 0.5 !important;
+    	border: 1px solid $light-grey !important;
+    }
 
+    .edit-box{
+    background-color: #fff;
+    padding: 20px 15px;
+    border-radius: 5px;
+    }
+
+    .tabs,
+    .tabs-content{
+    	border: none;
+    }
+
+    .tabs{
+    	background-color: $blue;
+    	border-radius: 5px 5px 0px 0px;
+    	a{
+    		color: #fff;
+    		font-weight: bold;
+    	}
+    	.tabs-title > a[aria-selected='true'] {
+    		background: lighten($blue, 10%);
+    		position: relative;
+    		&:after {
+			    content: '';
+			    position: absolute;
+			    bottom: -10px;
+			    width: 0;
+			    height: 0;
+			    border-top: solid 10px lighten($blue, 10%);
+			    border-left: solid 10px transparent;
+			    border-right: solid 10px transparent;
+			    margin-left: auto;
+			    margin-right: auto;
+			    left: 50%;
+			    transform: translateX(-50%);
+			}
+		}
+		.tabs-title > a:hover,
+		.tabs-title > a:focus,
+		.tabs-title > a:active {
+    		background: lighten($blue, 10%);
+		}
+
+		.tabs-title:first-child > a{
+			border-radius: 5px 0px 0px;
+		}
+    }
 
 /* Devise Layout */

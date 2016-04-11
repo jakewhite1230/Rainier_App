@@ -2,23 +2,38 @@
   <h3 class="plan-statement">You are currently on a <%=@tenant.plan %> plan.</h3>
 <% end %>
 
-<div id="free-plan"class="<% if @tenant.plan == 'free' %>plan-selected <% end %>plan free columns large-3 large-offset-3">
- <% if @tenant.plan == 'free' %>
-    <span class="plan-marker"><i class="fa fa-check"></i></span>
-  <% end %>
-  <h3 class="plan-title">Free Plan</h3>
-  <h2 class="plan-cost">$0<span class="per-month">/mo</span></h2>
-  <p class="plan-description">Your account is limited to only 3 clients and only 3 projects.</p>
-  <button class="button bright-blue-button">Free Plan</button>
+<div class="columns large-4">
+  <div class="<% if @tenant.plan == 'free' %>plan-selected <% end %>plan free">
+     <% if @tenant.plan == 'free' %>
+        <span class="plan-marker"><i class="fa fa-check"></i></span>
+      <% end %>
+      <h3 class="plan-title">Free Plan</h3>
+      <h2 class="plan-cost">$0<span class="per-month">/mo</span></h2>
+      <p class="plan-description">Your account is limited to only 3 clients and only 3 projects.</p>
+      <div class="button bright-blue-button"><a href="#">Free Plan</a></div>
+  </div>
 </div>
-<div class="<% if @tenant.plan == 'premium' %>plan-selected <% end %>plan premium columns large-3">
-  <% if @tenant.plan == 'premium' %>
-    <span class="plan-marker"><i class="fa fa-check"></i></span>
-  <% end %>
-  <h3 class="plan-title">Premium Plan</h3>
-  <h2 class="plan-cost">$10<span class="per-month">/mo</span></h2>
-  <p class="plan-description">Unlimited clients and unlimited projects.</p>
-  <button data-open="planModal" class="button bright-blue-button">Premium Plan</button>
+<div class="columns large-4">
+  <div class="<% if @tenant.plan == 'premium' %>plan-selected <% end %>plan premium">
+      <% if @tenant.plan == 'premium' %>
+        <span class="plan-marker"><i class="fa fa-check"></i></span>
+      <% end %>
+      <h3 class="plan-title">Premium Plan</h3>
+      <h2 class="plan-cost">$10<span class="per-month">/mo</span></h2>
+      <p class="plan-description">Unlimited clients and unlimited projects.</p>
+      <div data-open="planModal" class="button bright-blue-button"><a href="#">Premium Plan</a></div>
+  </div>
+</div>
+<div class="columns large-4">
+  <div class="<% if @tenant.plan == 'team' %>plan-selected <% end %>plan team comingSoon">
+      <% if @tenant.plan == 'team' %>
+        <span class="plan-marker"><i class="fa fa-check"></i></span>
+      <% end %>
+      <h3 class="plan-title">Team Plan</h3>
+      <h2 class="plan-cost">$25<span class="per-month">/mo</span></h2>
+      <p class="plan-description"></p>
+      <div class="button bright-blue-button"><a href="#">Team Plan</a></div>
+  </div>
 </div>
 
 <div id="planModal" class="reveal" data-reveal data-close-on-click="true" data-animation-in="slide-in-down" data-animation-out="slide-out-up">
@@ -69,9 +84,12 @@
 </div>
 
 <script>
-    if($('div').hasClass('plan-selected')){
-      var button = $('.plan-selected').find('button');
-      button.attr('disabled', true);
-      button.html('Current Plan');
+    if($('div').hasClass('plan-selected') || $('div').hasClass('comingSoon')){
+      var button1 = $('.plan-selected').find('.button');
+      var button2 = $('.comingSoon').find('.button');
+      button1.addClass('disabled');
+      button2.addClass('disabled');
+      button1.html('Current Plan');
+      button2.html('Coming Soon');
     }
 </script>

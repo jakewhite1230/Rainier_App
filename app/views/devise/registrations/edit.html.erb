@@ -3,15 +3,13 @@
 <script language="JavaScript">
 Stripe.setPublishableKey("<%= ENV['STRIPE_TEST_PUBLISHABLE_KEY']%>");
 </script>
-
 <div class="large-12 large-centered columns">
-  <div class="login-box">
-  <div class="row">
-  <div class="large-12 columns">
     <ul class="tabs" data-tabs id="example-tabs">
       <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">User Info</a></li>
       <li class="tabs-title"><a href="#panel2">Plan</a></li>
     </ul>
+  <div class="edit-box">
+  <div class="row">
     <div class="tabs-content" data-tabs-content="example-tabs">
       <div class="tabs-panel is-active" id="panel1">
           <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
@@ -41,6 +39,6 @@ Stripe.setPublishableKey("<%= ENV['STRIPE_TEST_PUBLISHABLE_KEY']%>");
       </div>
   </div>
 </div>
-</div>
+
 </div>
 </div>
