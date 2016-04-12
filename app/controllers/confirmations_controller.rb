@@ -1,7 +1,5 @@
 class ConfirmationsController < Milia::ConfirmationsController
- before_action :set_tenant, only: [:show, :edit, :update, :destroy, :new, :create]
  def update
- 	@tenant = Tenant.current_tenant
 	    if @confirmable.attempt_set_password(user_params)
 
 	      # this section is patterned off of devise 3.2.5 confirmations_controller#show
@@ -66,8 +64,4 @@ class ConfirmationsController < Milia::ConfirmationsController
  def set_confirmable()
  	@confirmable = User.find_or_initialize_with_error_by(:confirmation_token, params[:confirmation_token])
  end
- def set_tenant
-      @tenant = Tenant.find(params[:tenant_id])
-    end
-
 end

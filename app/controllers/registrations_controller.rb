@@ -1,6 +1,7 @@
-class RegistrationsController < Milia::RegistrationsController
+class RegistrationsController < Devise::RegistrationsController
 
-  skip_before_action :authenticate_tenant!, :only => [:new, :create, :cancel]
+  skip_before_action :authenticate_tenant!, :only => [:new, :create, :cancel, :edit]
+   before_action :set_tenant
 
 # ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
@@ -15,7 +16,7 @@ def create
     # have a working copy of the params in case Tenant callbacks
     # make any changes
   tenant_params = sign_up_params_tenant
-  user_params   = sign_up_params_user.merge({is_admin: true})
+  user_params   = sign_up_params_user
   coupon_params = sign_up_params_coupon
   
   sign_out_session!
@@ -166,6 +167,10 @@ end   # def create
 # ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
 
+private
+ def set_tenant
+      @tenant = Tenant.find(params[:tenant_id])
+    end
+
   end   # class Registrations
 
-end  # module Milia
