@@ -10,7 +10,7 @@
   </thead>
 
   <tbody>
-    <% @projects.each do |project| %>
+    <% @projects.upcoming.first(3).each do |project| %>
       <tr>
         <td><%= link_to project.title, tenant_project_path(project, tenant_id: @tenant.id) %></td>
         <td><%= project.expected_completion_date.strftime("%B %e, %Y") %></td>

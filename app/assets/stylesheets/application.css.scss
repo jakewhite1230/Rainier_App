@@ -466,4 +466,15 @@ input:active{
 		}
     }
 
+
+table a{
+	color: $black;
+	font-weight: 700;
+	opacity: 0.8;
+	&:hover, :active{
+		opacity: 1;
+		color: $black;
+	}
+}
+
 /* Devise Layout */

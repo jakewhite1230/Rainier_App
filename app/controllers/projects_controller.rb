@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to tenant_project_path, notice: 'Project was successfully created.' }
+        format.html { redirect_to tenant_project_path(@project, tenant_id: @tenant.id), notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to tenant_project_path, notice: 'Project was successfully updated.' }
+        format.html { redirect_to tenant_project_path(@project, tenant_id: @tenant.id), notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
