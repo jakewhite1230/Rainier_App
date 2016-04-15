@@ -21,7 +21,7 @@
       <h3 class="plan-title">Premium Plan</h3>
       <h2 class="plan-cost">$10<span class="per-month">/mo</span></h2>
       <p class="plan-description">Unlimited clients and unlimited projects.</p>
-      <div data-open="planModal" class="button bright-blue-button"><a href="#">Premium Plan</a></div>
+      <div data-open="premium-plan-modal" class="button bright-blue-button"><a href="#">Premium Plan</a></div>
   </div>
 </div>
 <div class="columns large-4">
@@ -36,9 +36,10 @@
   </div>
 </div>
 
-<div id="planModal" class="reveal" data-reveal data-close-on-click="true" data-animation-in="slide-in-down" data-animation-out="slide-out-up">
-  <h3>Please enter your billing information.</h3>
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<div id="premium-plan-modal" class="reveal" data-reveal data-close-on-click="true" data-animation-in="slide-in-down" data-animation-out="slide-out-up">
+  <h3>Upgrade to the Premium Plan</h3>
+  <p>Unlimited clients and unlimited projects</p>
+  <%= form_for(resource, :as => resource_name, :html => { :id => :'payment-form' }, :url => registration_path(resource_name)) do |f| %>
         <%= fields_for(:tenant) do |w| %>
          <%= fields_for( :payment ) do |p| %>
         <div class="row col-md-12">

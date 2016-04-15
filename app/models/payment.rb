@@ -13,7 +13,21 @@ class Payment < ActiveRecord::Base
   end
 
   def process_payment
-  	customer = Stripe::Customer.create email: email, source:token, plan: 'rainier-monthly'
+
+    # Set your secret key: remember to change this to your live secret key in production
+    # See your keys here https://dashboard.stripe.com/account/apikeys
+    Stripe.api_key = ENV[STRIPE_TEST_SECRET_KEY]
+
+
+    # Get the credit card details submitted by the form
+    token = params[:stripeToken]
+
+    # Create a Customer
+    customer = Stripe::Customer.create(
+      :source => token,
+      :plan => "rainier-monthly",
+      :email => "email"
+    )
 
 
   end
